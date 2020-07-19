@@ -13,6 +13,14 @@ class GameScreen(Widget):
     movement_y = 0
     snake_parts = []
 
+    def new_game(self):
+        to_be_removed = []
+        for child in self.children:
+            if isinstance(child, SnakePart):
+                to_be_removed.append(child)
+        for child in to_be_removed:
+            self.remove_widget(child)
+
 
 
 class MainApp(App):
