@@ -1,0 +1,11 @@
+#:import random random
+
+
+<SnakePart>:
+    size: 40, 40
+    canvas.before:
+        Color:
+            rgb: random.random(),random.random(),random.random()
+        Rectangle:
+            size: self.size
+            pos: self.pos
