@@ -7,6 +7,12 @@ from kivy.core.window import Window
 class SnakePart(Widget):
     pass
 
+class GameScreen(Widget):
+    step_size = 40
+    movement_x = 0
+    movement_y = 0
+    snake_parts = []
+
 
 
 class MainApp(App):
