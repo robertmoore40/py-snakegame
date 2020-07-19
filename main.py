@@ -6,3 +6,11 @@ from kivy.core.window import Window
 
 class SnakePart(Widget):
     pass
+
+
+
+class MainApp(App):
+    def on_start(self):
+        self.root.new_game()
+        Clock.schedule_interval(self.root.next_frame, .25)
+    pass
