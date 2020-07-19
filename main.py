@@ -21,6 +21,14 @@ class GameScreen(Widget):
         for child in to_be_removed:
             self.remove_widget(child)
 
+             self.snake_parts = []
+        self.movement_x = 0
+        self.movement_y = 0
+        head = SnakePart()
+        head.pos = (0, 0)
+        self.snake_parts.append(head)
+        self.add_widget(head)
+
 
 
 class MainApp(App):
