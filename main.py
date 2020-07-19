@@ -14,3 +14,6 @@ class MainApp(App):
         self.root.new_game()
         Clock.schedule_interval(self.root.next_frame, .25)
     pass
+
+
+MainApp().run()
