@@ -89,6 +89,13 @@ class GameScreen(Widget):
             self.snake_parts.append(new_part)
             self.add_widget(new_part)
 
+       for part in self.snake_parts[1:]:
+            if self.collides_widget(part, head):
+                self.new_game()
+
+        # Check for snake colliding with wall
+        if not self.collides_widget(self, head):
+            self.new_game()
 
 
 class MainApp(App):
