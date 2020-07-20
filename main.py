@@ -29,6 +29,26 @@ class GameScreen(Widget):
         self.snake_parts.append(head)
         self.add_widget(head)
 
+            def on_touch_up(self, touch):
+            dx = touch.x - touch.opos[0]
+        dy = touch.y - touch.opos[1]
+        if abs(dx) > abs(dy):
+            # Moving left or right
+            self.movement_y = 0
+            if dx > 0:
+                self.movement_x = self.step_size
+            else:
+                self.movement_x = - self.step_size
+        else:
+            # Moving up or down
+            self.movement_x = 0
+            if dy > 0:
+                self.movement_y = self.step_size
+            else:
+                self.movement_y = - self.step_size
+
+        
+
 
 
 class MainApp(App):
