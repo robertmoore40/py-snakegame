@@ -93,7 +93,6 @@ class GameScreen(Widget):
             if self.collides_widget(part, head):
                 self.new_game()
 
-        # Check for snake colliding with wall
         if not self.collides_widget(self, head):
             self.new_game()
 
