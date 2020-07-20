@@ -3,6 +3,8 @@ from kivy.uix.widget import Widget
 from kivy.clock import Clock
 from random import randint
 from kivy.core.window import Window
+#fix imports and spacing/ indentation
+
 
 class SnakePart(Widget):
     pass
