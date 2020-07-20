@@ -60,12 +60,22 @@ class GameScreen(Widget):
         return True
         
   def next_frame(self, *args):
-        # Move the snake
+
         head = self.snake_parts[0]
         food = self.ids.food
         last_x = self.snake_parts[-1].x
         last_y = self.snake_parts[-1].y
-        
+
+
+          for i, part in enumerate(self.snake_parts):
+                if i == 0:
+                continue
+            part.new_y = self.snake_parts[i-1].y
+            part.new_x = self.snake_parts[i-1].x
+        for part in self.snake_parts[1:]:
+            part.y = part.new_y
+            part.x = part.new_x
+
 
 class MainApp(App):
     def on_start(self):
