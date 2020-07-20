@@ -80,6 +80,16 @@ class GameScreen(Widget):
         head.y += self.movement_y
 
 
+   if self.collides_widget(head, food):
+            food.x = randint(0, Window.width-food.width)
+            food.y = randint(0, Window.height - food.height)
+            new_part = SnakePart()
+            new_part.x = last_x
+            new_part.y = last_y
+            self.snake_parts.append(new_part)
+            self.add_widget(new_part)
+
+
 
 class MainApp(App):
     def on_start(self):
