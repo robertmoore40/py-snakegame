@@ -47,6 +47,17 @@ class GameScreen(Widget):
             else:
                 self.movement_y = - self.step_size
 
+
+    def collides_widget(self, wid1, wid2):
+        if wid1.right <= wid2.x:
+            return False
+        if wid1.x >= wid2.right:
+            return False
+        if wid1.top <= wid2.y:
+            return False
+        if wid1.y >= wid2.top:
+            return False
+        return True
         
 
 
