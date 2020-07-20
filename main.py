@@ -76,6 +76,10 @@ class GameScreen(Widget):
             part.y = part.new_y
             part.x = part.new_x
 
+               head.x += self.movement_x
+        head.y += self.movement_y
+
+
 
 class MainApp(App):
     def on_start(self):
